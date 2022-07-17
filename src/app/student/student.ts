@@ -1,4 +1,6 @@
-import {Component, Input} from "@angular/core";
+import {Component,Input} from "@angular/core";
+import {IStudent} from "../interfase/student.interfase";
+import {IClass} from "../interfase/class.interface";
 
 @Component({
   selector:'app-student',
@@ -6,7 +8,8 @@ import {Component, Input} from "@angular/core";
   templateUrl:'./student.html'
 })
 export class StudentComponent {
-  @Input("studentName") studentName!: string;
-  @Input("studentAge") studentAge!: number;
+  @Input()
+  data!: IClass;
+
 
 }

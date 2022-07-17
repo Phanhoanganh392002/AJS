@@ -1,5 +1,5 @@
 export interface IStudent {
-  studentName: string;
-  studentAge:number;
-  phoneNumber:string;
+ className: string;
+ clasStatus: string;
+
 }

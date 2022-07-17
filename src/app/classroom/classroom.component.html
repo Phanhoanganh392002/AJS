@@ -1,21 +1,26 @@
-<input type="text" [(ngModel)]="className" placeholder="Class name"/>
-<h1>Day la danh sach sinh vien lop {{className}}</h1>
+<input type="text" [(ngModel)]="className" placeholder="Class name.."/>
+<h1>Đây là danh sách sinh viên lớp {{className}}:</h1>
 <button type="button" (click)="changeName()">Change Name</button>
-<p>123143534 </p>
-<app-student *ngFor="let st of studentName;let i=index;"
-             [studentName]="st" [studentAge]="studentAge[i]"></app-student>
-
+<app-student *ngFor="let sv of classArray"
+             [data]="sv">
+</app-student>
 <h2>Trạng thái hoạt động của lớp:
   <span *ngIf="classStatus">Hoạt động</span>
-  <span *ngIf="!classStatus">Nghỉ</span>
+  <span *ngIf="!classStatus">Vô hiệu</span>
 </h2>
-<button type="button" (click)="changeStatus">chuyển trạng thái</button>
+<button type="button" (click)="changeStatus()">Chuyển trạng thái</button>
+
 <h2>Danh sách giáo viên:</h2>
 <ol>
-  <li *ngFor="let t of teacherNames;let i=index;">{{teacherNames[i]}}</li>
+  <li *ngFor="let t of teacherNames;let i=index;">
+    {{teacherNames[i]}}
+  </li>
 </ol>
-
-<h2>Danh sách môn hoc:</h2>
+<h2>Danh sách môn học:</h2>
 <ol>
-  <li *ngFor="let s of subjectName;let i=index;">{{subjectName[i]}}</li>
+  <li *ngFor="let s of subjectNames;">
+    {{s}}
+  </li>
 </ol>
+<h2>{{data.className}}</h2>
+<h3>{{data.clasStatus}}</h3>

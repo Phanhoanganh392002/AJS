@@ -1,6 +1,5 @@
-import {Component} from "@angular/core";
-import {IStudent} from "../interfase/student.interfase";
-
+import {Component, Input} from "@angular/core";
+import {IClass} from "../interfase/class.interface"
 @Component({
   selector:'app-classroom',
   templateUrl:'./classroom.component.html'
@@ -8,34 +7,31 @@ import {IStudent} from "../interfase/student.interfase";
 export class ClassroomComponent {
   className = 'T2204M';
   classStatus = true;
-  studentAge=[18,19];
+  @Input()
+  data!: IClass;
 
-  //tao 1 danh sach sinh vien
-  studenArray: IStudent[] = [
-    {studentName:'Hoàng Văn Nam',studentAge:18, phoneNumber:'043252345324532'},
-    {studentName:'Vũ Trưởng Thành',studentAge:19, phoneNumber:'04328545532'}
+
+  // tao 1 danh sach sinh vien
+  classArray: IClass[] = [
+    {className:'T2204M',clasStatus:true},
+    {className:'T2203S',clasStatus:false},
   ];
 
-  studentName= [
-    'Hoàng Văn Nam',
-    'Vũ Trưởng Thành'
-  ];
   teacherNames = [
-    'Trinh Quang Hoa',
-    'Nguyen Tuan',
-    'Dang Kim Thi'
+    'Trịnh Quang Hòa',
+    'Nguyễn Tuân',
+    'Đặng Kim Thi'
   ];
-  subjectName=[
+  subjectNames=[
     'LBEP',
     'HCJS',
     'AJS',
     'DMS'
   ];
-
-  changeName() {
+  changeName(){
     this.className = 'T2203E';
   }
-  changeStatus() {
+  changeStatus(){
     this.classStatus = !this.classStatus;
   }
 }

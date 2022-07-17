@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {IClass} from "./interfase/class.interface";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+  classArray: IClass[] = [
+    {className:'T2204M',clasStatus:true},
+    {className:'T2203S',clasStatus:false},
+]
 }
