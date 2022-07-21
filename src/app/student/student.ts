@@ -1,6 +1,6 @@
 import {Component,Input} from "@angular/core";
-import {IStudent} from "../interfase/student.interfase";
-import {IClass} from "../interfase/class.interface";
+import {IStudent} from "../interface/student.interfase";
+import {IClass} from "../interface/class.interface";
 
 @Component({
   selector:'app-student',

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IClass} from "./interfase/class.interface";
+import {IClass} from "./interface/class.interface";
 
 @Component({
   selector: 'app-root',
