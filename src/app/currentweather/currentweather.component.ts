@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {ICurrentweather} from "../interface/weather.interface";
+import {ICurrentweather} from "../student/weather.interface";
 import {HttpClient, HttpParams} from "@angular/common/http";
 
 @Component({

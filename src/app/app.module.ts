@@ -8,18 +8,34 @@ import {FormsModule} from "@angular/forms";
 import {CurrentweatherComponent} from "./currentweather/currentweather.component";
 import {HttpClientModule} from "@angular/common/http";
 import {Assignment1Component} from "./Assignment 1/Assignment 1.component";
+import {RouterModule, Routes} from "@angular/router";
+import {AboutusComponent} from "./aboutus/aboutus.component";
+import {SigninComponent} from "./signin/signin.component";
+import {SignupComponent} from "./signup/signup.component";
 
+const  appRoutes: Routes =[
+  {path: '',component: CurrentweatherComponent},
+  {path: 'about-us',component: AboutusComponent},
+  {path:'signin',component:SigninComponent},
+  {path:'signup',component:SignupComponent},
+  {path: 'signin/signup',   redirectTo: 'signup', pathMatch: 'full' }
+
+]
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
     ClassroomComponent,
     CurrentweatherComponent,
-    Assignment1Component
+    Assignment1Component,
+    AboutusComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
